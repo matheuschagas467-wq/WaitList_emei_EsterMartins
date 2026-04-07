@@ -1,74 +1,51 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Lista de Espera - EMEI Ester Martins</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
-</head>
-
-<body>
-
-<header>
-  <h1>🎒 Lista de Espera - EMEI Ester Martins</h1>
-  <button onclick="toggleTheme()">🌗 Tema</button>
-</header>
-
 <section class="form-container">
-  <h2>Cadastro</h2>
 
-  <input type="text" id="nome" placeholder="Nome da Criança">
-  <input type="date" id="nascimento">
-  <input type="date" id="inscricao">
-  <input type="text" id="responsavel" placeholder="Nome do Responsável">
-  <input type="text" id="telefone" placeholder="Telefone">
-  <input type="text" id="endereco" placeholder="Endereço">
-  <textarea id="obs" placeholder="Observações"></textarea>
+  <h2>📋 Cadastro na Lista de Espera</h2>
 
-  <select id="status">
-    <option value="Aguardando">Aguardando</option>
-    <option value="Chamado">Chamado</option>
-    <option value="Matriculado">Matriculado</option>
-    <option value="Desistiu">Desistiu</option>
-  </select>
+  <div class="input-group">
+    <label>👶 Nome da Criança</label>
+    <input type="text" id="nome" placeholder="Ex: João da Silva">
+  </div>
 
-  <button onclick="addRegistro()">➕ Adicionar</button>
+  <div class="input-group">
+    <label>🎂 Data de Nascimento</label>
+    <input type="date" id="nascimento">
+  </div>
+
+  <div class="input-group">
+    <label>📅 Data de Inscrição</label>
+    <input type="date" id="inscricao">
+  </div>
+
+  <div class="input-group">
+    <label>👨‍👩‍👧 Nome do Responsável</label>
+    <input type="text" id="responsavel" placeholder="Ex: Maria Souza">
+  </div>
+
+  <div class="input-group">
+    <label>📞 Telefone</label>
+    <input type="text" id="telefone" placeholder="(00) 00000-0000">
+  </div>
+
+  <div class="input-group">
+    <label>🏠 Endereço</label>
+    <input type="text" id="endereco" placeholder="Rua, número, bairro">
+  </div>
+
+  <div class="input-group">
+    <label>📝 Observações</label>
+    <textarea id="obs" placeholder="Informações adicionais"></textarea>
+  </div>
+
+  <div class="input-group">
+    <label>📌 Status</label>
+    <select id="status">
+      <option>Aguardando</option>
+      <option>Chamado</option>
+      <option>Matriculado</option>
+      <option>Desistiu</option>
+    </select>
+  </div>
+
+  <button class="btn-add" onclick="addRegistro()">➕ Adicionar</button>
 </section>
-
-<section class="filtros">
-  <h3>Filtros</h3>
-  <input type="date" id="filtroNascimento">
-  <select id="ordem">
-    <option value="asc">Ordem de Inscrição ↑</option>
-    <option value="desc">Ordem de Inscrição ↓</option>
-  </select>
-  <button onclick="filtrar()">Filtrar</button>
-  <button onclick="gerarPDF()">📄 Exportar PDF</button>
-</section>
-
-<section>
-  <table id="tabela">
-    <thead>
-      <tr>
-        <th>Nome</th>
-        <th>Nascimento</th>
-        <th>Inscrição</th>
-        <th>Responsável</th>
-        <th>Telefone</th>
-        <th>Status</th>
-        <th>Obs</th>
-        <th>Ações</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
-</section>
-
-<footer>
-  <p>Desenvolvido por MatheusChagas.dev</p>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
