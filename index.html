@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sistema</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+
+<script>
+if(!localStorage.getItem("instituicaoLogada")){
+window.location.href="login.html";
+}
+</script>
+
+<h2 id="titulo"></h2>
+
+<form id="form">
+<input id="crianca" placeholder="Nome" required>
+<input type="date" id="nascimento" required>
+<input type="date" id="inscricao" required>
+<input id="responsavel" placeholder="Responsável" required>
+<button>Salvar</button>
+</form>
+
+<button onclick="gerarPDF()">PDF</button>
+
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Criança</th>
+<th>Nasc.</th>
+<th>Inscrição</th>
+<th>Resp.</th>
+<th>Ações</th>
+</tr>
+</thead>
+<tbody id="lista"></tbody>
+</table>
+
+<script src="script.js"></script>
+</body>
+</html>
