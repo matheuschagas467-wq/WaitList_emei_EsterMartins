@@ -1,80 +1,168 @@
+:root {
+  --grad1: #00c6ff;
+  --grad2: #0072ff;
+  --card-bg: rgba(255, 255, 255, 0.1);
+  --text: #ffffff;
+}
+
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
-  background: #f4f7fb;
-}
+  height: 100vh;
 
-header {
-  background: #4CAF50;
-  color: white;
-  padding: 15px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+
+  background: linear-gradient(-45deg, var(--grad1), var(--grad2), #00dbde, #fc00ff);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  color: var(--text);
 }
 
-h1, h2, h3 {
-  margin: 10px;
+/* ANIMAÇÃO */
+@keyframes gradientMove {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
 }
 
-.form-container, .filtros {
-  background: white;
-  padding: 15px;
-  margin: 15px;
-  border-radius: 10px;
+/* HEADER */
+header {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  font-size: 22px;
+  font-weight: bold;
 }
 
-input, select, textarea {
+/* CARD PRINCIPAL */
+.form-container {
+  width: 95%;
+  max-width: 600px;
+
+  background: var(--card-bg);
+  backdrop-filter: blur(15px);
+
+  padding: 25px;
+  border-radius: 20px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* GRUPO DE INPUT */
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  font-size: 14px;
+  margin-bottom: 5px;
   display: block;
-  width: 100%;
-  margin: 8px 0;
-  padding: 8px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  opacity: 0.9;
 }
 
-button {
-  padding: 10px;
-  margin-top: 10px;
+/* INPUTS */
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+
+  border-radius: 10px;
   border: none;
-  background: #4CAF50;
+
+  outline: none;
+  font-size: 14px;
+
+  background: rgba(255,255,255,0.2);
   color: white;
-  cursor: pointer;
-  border-radius: 6px;
 }
 
-button:hover {
-  background: #45a049;
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255,255,255,0.7);
 }
 
-table {
+/* BOTÕES */
+button {
   width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+
+  border: none;
+  border-radius: 10px;
+
+  font-size: 15px;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* BOTÃO PRINCIPAL */
+.btn-add {
+  background: #00e676;
+}
+
+.btn-add:hover {
+  background: #00c853;
+}
+
+/* BOTÃO PDF */
+.btn-pdf {
+  background: #2979ff;
+}
+
+.btn-pdf:hover {
+  background: #2962ff;
+}
+
+/* TABELA */
+table {
+  width: 95%;
+  margin-top: 20px;
+
   border-collapse: collapse;
-  margin: 15px;
-  background: white;
+  background: rgba(255,255,255,0.1);
+
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 th, td {
   padding: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-footer {
   text-align: center;
-  padding: 10px;
-  background: #eee;
 }
 
-/* Tema escuro */
+th {
+  background: rgba(0,0,0,0.2);
+}
+
+/* AÇÕES */
+.acao-btn {
+  padding: 5px 10px;
+  margin: 2px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.edit {
+  background: #ffc107;
+}
+
+.delete {
+  background: #ff5252;
+  color: white;
+}
+
+/* FOOTER */
+footer {
+  margin-top: 20px;
+  opacity: 0.8;
+}
+
+/* DARK MODE */
 .dark {
-  background: #1e1e1e;
-  color: white;
-}
-
-.dark table {
-  background: #2a2a2a;
-}
-
-.dark input, .dark select, .dark textarea {
-  background: #333;
-  color: white;
+  --grad1: #1e1e1e;
+  --grad2: #121212;
 }
