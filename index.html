@@ -1,51 +1,85 @@
-<section class="form-container">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Espera - EMEI Ester Martins</title>
 
-  <h2>📋 Cadastro na Lista de Espera</h2>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 
-  <div class="input-group">
-    <label>👶 Nome da Criança</label>
-    <input type="text" id="nome" placeholder="Ex: João da Silva">
+  <!-- Fonte moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>🎒 Lista de Espera</h1>
+  <h3>EMEI Ester Martins</h3>
+
+  <div class="card">
+
+    <h2>📋 Cadastro</h2>
+
+    <div class="grid">
+
+      <div class="input-group">
+        <label>👶 Nome da Criança</label>
+        <input type="text" id="nome" placeholder="Ex: João da Silva">
+      </div>
+
+      <div class="input-group">
+        <label>🎂 Data de Nascimento</label>
+        <input type="date" id="nascimento">
+      </div>
+
+      <div class="input-group">
+        <label>📅 Data de Inscrição</label>
+        <input type="date" id="inscricao">
+      </div>
+
+      <div class="input-group">
+        <label>👨‍👩‍👧 Responsável</label>
+        <input type="text" id="responsavel" placeholder="Ex: Maria Souza">
+      </div>
+
+      <div class="input-group">
+        <label>📞 Telefone</label>
+        <input type="text" id="telefone" placeholder="(00) 00000-0000">
+      </div>
+
+      <div class="input-group">
+        <label>🏠 Endereço</label>
+        <input type="text" id="endereco" placeholder="Rua, número, bairro">
+      </div>
+
+      <div class="input-group full">
+        <label>📝 Observações</label>
+        <textarea id="obs" placeholder="Informações adicionais"></textarea>
+      </div>
+
+      <div class="input-group">
+        <label>📌 Status</label>
+        <select id="status">
+          <option>Aguardando</option>
+          <option>Chamado</option>
+          <option>Matriculado</option>
+          <option>Desistiu</option>
+        </select>
+      </div>
+
+    </div>
+
+    <button class="btn-add" onclick="addRegistro()">➕ Adicionar</button>
+
   </div>
 
-  <div class="input-group">
-    <label>🎂 Data de Nascimento</label>
-    <input type="date" id="nascimento">
-  </div>
+</div>
 
-  <div class="input-group">
-    <label>📅 Data de Inscrição</label>
-    <input type="date" id="inscricao">
-  </div>
+<footer>
+  Desenvolvido por MatheusChagas.dev
+</footer>
 
-  <div class="input-group">
-    <label>👨‍👩‍👧 Nome do Responsável</label>
-    <input type="text" id="responsavel" placeholder="Ex: Maria Souza">
-  </div>
-
-  <div class="input-group">
-    <label>📞 Telefone</label>
-    <input type="text" id="telefone" placeholder="(00) 00000-0000">
-  </div>
-
-  <div class="input-group">
-    <label>🏠 Endereço</label>
-    <input type="text" id="endereco" placeholder="Rua, número, bairro">
-  </div>
-
-  <div class="input-group">
-    <label>📝 Observações</label>
-    <textarea id="obs" placeholder="Informações adicionais"></textarea>
-  </div>
-
-  <div class="input-group">
-    <label>📌 Status</label>
-    <select id="status">
-      <option>Aguardando</option>
-      <option>Chamado</option>
-      <option>Matriculado</option>
-      <option>Desistiu</option>
-    </select>
-  </div>
-
-  <button class="btn-add" onclick="addRegistro()">➕ Adicionar</button>
-</section>
+</body>
+</html>
