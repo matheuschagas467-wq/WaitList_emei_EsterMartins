@@ -1,168 +1,99 @@
-:root {
-  --grad1: #00c6ff;
-  --grad2: #0072ff;
-  --card-bg: rgba(255, 255, 255, 0.1);
-  --text: #ffffff;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
-  margin: 0;
-  height: 100vh;
 
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
 
-  background: linear-gradient(-45deg, var(--grad1), var(--grad2), #00dbde, #fc00ff);
+  min-height: 100vh;
+
+  background: linear-gradient(-45deg, #00c6ff, #0072ff, #00dbde, #fc00ff);
   background-size: 400% 400%;
-  animation: gradientMove 10s ease infinite;
-  color: var(--text);
+  animation: gradient 10s ease infinite;
+
+  color: white;
 }
 
 /* ANIMAÇÃO */
-@keyframes gradientMove {
+@keyframes gradient {
   0% { background-position: 0% 50% }
   50% { background-position: 100% 50% }
   100% { background-position: 0% 50% }
 }
 
-/* HEADER */
-header {
-  width: 100%;
-  text-align: center;
-  padding: 20px;
-  font-size: 22px;
-  font-weight: bold;
-}
-
-/* CARD PRINCIPAL */
+/* CARD */
 .form-container {
-  width: 95%;
-  max-width: 600px;
+  width: 90%;
+  max-width: 500px;
 
-  background: var(--card-bg);
-  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
 
   padding: 25px;
   border-radius: 20px;
 
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-/* GRUPO DE INPUT */
+/* TÍTULO */
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* GRUPOS */
 .input-group {
   margin-bottom: 15px;
 }
 
 .input-group label {
+  display: block;
   font-size: 14px;
   margin-bottom: 5px;
-  display: block;
-  opacity: 0.9;
 }
 
 /* INPUTS */
 input, textarea, select {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
 
-  border-radius: 10px;
   border: none;
+  border-radius: 10px;
 
   outline: none;
-  font-size: 14px;
 
   background: rgba(255,255,255,0.2);
   color: white;
 }
 
+/* PLACEHOLDER */
 input::placeholder,
 textarea::placeholder {
   color: rgba(255,255,255,0.7);
 }
 
-/* BOTÕES */
-button {
+/* BOTÃO */
+.btn-add {
   width: 100%;
   padding: 12px;
-  margin-top: 10px;
 
   border: none;
   border-radius: 10px;
 
-  font-size: 15px;
-  font-weight: bold;
+  background: #00e676;
+  color: #000;
 
+  font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
 }
 
-/* BOTÃO PRINCIPAL */
-.btn-add {
-  background: #00e676;
-}
-
 .btn-add:hover {
   background: #00c853;
-}
-
-/* BOTÃO PDF */
-.btn-pdf {
-  background: #2979ff;
-}
-
-.btn-pdf:hover {
-  background: #2962ff;
-}
-
-/* TABELA */
-table {
-  width: 95%;
-  margin-top: 20px;
-
-  border-collapse: collapse;
-  background: rgba(255,255,255,0.1);
-
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-th, td {
-  padding: 10px;
-  text-align: center;
-}
-
-th {
-  background: rgba(0,0,0,0.2);
-}
-
-/* AÇÕES */
-.acao-btn {
-  padding: 5px 10px;
-  margin: 2px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-}
-
-.edit {
-  background: #ffc107;
-}
-
-.delete {
-  background: #ff5252;
-  color: white;
-}
-
-/* FOOTER */
-footer {
-  margin-top: 20px;
-  opacity: 0.8;
-}
-
-/* DARK MODE */
-.dark {
-  --grad1: #1e1e1e;
-  --grad2: #121212;
 }
