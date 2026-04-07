@@ -1,45 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Sistema</title>
-<link rel="stylesheet" href="style.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+  <meta charset="UTF-8">
+  <title>Lista de Espera - EMEI Ester Martins</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
 </head>
+
 <body>
 
-<script>
-if(!localStorage.getItem("instituicaoLogada")){
-window.location.href="login.html";
-}
-</script>
+<header>
+  <h1>🎒 Lista de Espera - EMEI Ester Martins</h1>
+  <button onclick="toggleTheme()">🌗 Tema</button>
+</header>
 
-<h2 id="titulo"></h2>
+<section class="form-container">
+  <h2>Cadastro</h2>
 
-<form id="form">
-<input id="crianca" placeholder="Nome" required>
-<input type="date" id="nascimento" required>
-<input type="date" id="inscricao" required>
-<input id="responsavel" placeholder="Responsável" required>
-<button>Salvar</button>
-</form>
+  <input type="text" id="nome" placeholder="Nome da Criança">
+  <input type="date" id="nascimento">
+  <input type="date" id="inscricao">
+  <input type="text" id="responsavel" placeholder="Nome do Responsável">
+  <input type="text" id="telefone" placeholder="Telefone">
+  <input type="text" id="endereco" placeholder="Endereço">
+  <textarea id="obs" placeholder="Observações"></textarea>
 
-<button onclick="gerarPDF()">PDF</button>
+  <select id="status">
+    <option value="Aguardando">Aguardando</option>
+    <option value="Chamado">Chamado</option>
+    <option value="Matriculado">Matriculado</option>
+    <option value="Desistiu">Desistiu</option>
+  </select>
 
-<table>
-<thead>
-<tr>
-<th>#</th>
-<th>Criança</th>
-<th>Nasc.</th>
-<th>Inscrição</th>
-<th>Resp.</th>
-<th>Ações</th>
-</tr>
-</thead>
-<tbody id="lista"></tbody>
-</table>
+  <button onclick="addRegistro()">➕ Adicionar</button>
+</section>
+
+<section class="filtros">
+  <h3>Filtros</h3>
+  <input type="date" id="filtroNascimento">
+  <select id="ordem">
+    <option value="asc">Ordem de Inscrição ↑</option>
+    <option value="desc">Ordem de Inscrição ↓</option>
+  </select>
+  <button onclick="filtrar()">Filtrar</button>
+  <button onclick="gerarPDF()">📄 Exportar PDF</button>
+</section>
+
+<section>
+  <table id="tabela">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Nascimento</th>
+        <th>Inscrição</th>
+        <th>Responsável</th>
+        <th>Telefone</th>
+        <th>Status</th>
+        <th>Obs</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+<footer>
+  <p>Desenvolvido por MatheusChagas.dev</p>
+</footer>
 
 <script src="script.js"></script>
 </body>
